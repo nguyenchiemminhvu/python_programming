@@ -19,8 +19,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://examples.com"
-Documentation = "https://examples.com/docs"
+Homepage = "https://github.com/nguyenchiemminhvu/python_programming/tree/main/study/pyproject/hello_pyproject"
+Documentation = "https://github.com/nguyenchiemminhvu/python_programming/tree/main/study/pyproject/hello_pyproject"
 
 [project.scripts]
 hello_pyproject = "hello_pyproject.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
