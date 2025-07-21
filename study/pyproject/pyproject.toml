@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello_pyproject"
+version = "0.1.0"
+description = "Study pyproject.toml"
+readme = "README.md"
+authors = [{ name = "Vu Nguyen", email = "nguyenchiemminhvu@gmail.com" }]
+maintainers = [
+    { name = "maintainer 1", email = "ncmv_maintainer1@gmail.com" },
+    { name = "maintainer 2", email = "ncmv_maintainer2@gmail.com" }
+]
+license = { file = "LICENSE" }
+dependencies = [ 
+    "matplotlib>=3.10",
+    "numpy>=1.20"
+]
+
+[project.urls]
+Homepage = "https://examples.com"
+Documentation = "https://examples.com/docs"
+
+[project.scripts]
+hello_pyproject = "hello_pyproject.__main__:main"
