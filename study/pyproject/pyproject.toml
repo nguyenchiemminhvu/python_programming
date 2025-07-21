@@ -27,4 +27,4 @@ hello_pyproject = "hello_pyproject.__main__:main"
 simple_math = "simple_math.__main__:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
