@@ -24,6 +24,7 @@ Documentation = "https://github.com/nguyenchiemminhvu/python_programming/tree/ma
 
 [project.scripts]
 hello_pyproject = "hello_pyproject.__main__:main"
+simple_math = "simple_math.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
