@@ -1,1 +1,1 @@
-from . import submodule
+from setuptools_example import submodule

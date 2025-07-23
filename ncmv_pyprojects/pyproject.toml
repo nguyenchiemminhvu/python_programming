@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ncmv_pyprojects"
+version = "1.0.0"
+description = "Python modules developed by NCMV"
+readme = "README.md"
+authors = [
+    { name = "nguyenchiemminhvu", email = "nguyenchiemminhvu@gmail.com" }
+]
+license = { file = "LICENSE" }
+dependencies = [
+    "requests",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "plotly"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

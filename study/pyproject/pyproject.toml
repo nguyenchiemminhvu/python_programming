@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = pyproject_example"
+name = "pyproject_example"
 version = "0.1.0"
 description = "Study pyproject.toml"
 readme = "README.md"

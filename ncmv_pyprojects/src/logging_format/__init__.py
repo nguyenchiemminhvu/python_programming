@@ -1,0 +1,1 @@
+from logging_format import default_format

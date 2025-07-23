@@ -1,1 +1,1 @@
-from . import greeting
+from pyproject_example import greeting
