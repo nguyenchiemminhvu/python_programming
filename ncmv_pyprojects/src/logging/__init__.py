@@ -1,1 +1,1 @@
-from .logging import default_format
+from logging import default_format

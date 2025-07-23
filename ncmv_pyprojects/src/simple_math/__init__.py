@@ -1,1 +1,1 @@
-from . import simple_math
+from simple_math import simple_math
