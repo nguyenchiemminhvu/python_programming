@@ -20,6 +20,14 @@ class InterfaceEnforceMeta(type):
         if "required_method" not in attrs:
             raise TypeError(f"Class {name} must implement 'required_method'")
         return super().__new__(cls, name, bases, attrs)
+    
+    def __instancecheck__(self, instance):
+        required_methods = getattr(self, 'required_method', [])
+        return all(callable(getattr(instance, method, None)) for method in required_methods)
+    
+    def __subclasscheck__(self, cls):
+        required_methods = getattr(self, 'required_method', [])
+        return all(callable(getattr(cls, method, None)) for method in required_methods)
 
 class Singleton(metaclass=SingletonMeta):
     def __init__(self):
