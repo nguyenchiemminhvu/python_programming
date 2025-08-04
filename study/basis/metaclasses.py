@@ -1,4 +1,3 @@
-from ncmv import default_logging
 import logging
 
 class SingletonMeta(type):
