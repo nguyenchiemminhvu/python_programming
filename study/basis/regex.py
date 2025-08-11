@@ -18,5 +18,9 @@ print(x)  # ['The', 'rain', 'in', 'Spain']
 x = re.sub(r"ain", "XXX", txt)
 print(x)  # The rXXX in SpXXX
 
+# grouping
 x = re.match(r"([\w ]+)(\d+)", txt)
 print(x)  # <re.Match object; span=(0, 20), match='The rain in Spain 123'>
+
+x = re.sub(r"([\w ]+) (\d+)", r"\2 \1", txt)
+print(x)  # 123 The rain in Spain
