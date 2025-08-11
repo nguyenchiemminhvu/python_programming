@@ -124,3 +124,13 @@ try:
     os.remove("non_existent_file.txt")
 except OSError as e:
     print(f"Error: {e}")
+
+# user-defined exception
+class CustomError(Exception):
+    """A custom exception class."""
+    pass
+
+try:
+    raise CustomError("This is a custom error")
+except CustomError as e:
+    print(f"Error: {e}")
