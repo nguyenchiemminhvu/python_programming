@@ -11,7 +11,7 @@ class Person:
 
 class Student(Person):
     def __init__(self, birth_year, student_id):
-        super().__init__(birth_year)
+        Person.__init__(self, birth_year)
         self.student_id = student_id
     
     def display_info(self):
@@ -20,12 +20,22 @@ class Student(Person):
 
 class Teacher(Person):
     def __init__(self, birth_year, subject):
-        super().__init__(birth_year)
+        Person.__init__(self, birth_year)
         self.subject = subject
     
     def display_info(self):
         age = self.get_age()
         print(f"Subject: {self.subject}, Age: {age}")
+
+# multi inheritance
+class StudentPartner(Student, Teacher):
+    def __init__(self, birth_year, student_id, subject):
+        Student.__init__(self, birth_year, student_id)
+        Teacher.__init__(self, birth_year, subject)
+    
+    def display_info(self):
+        age = self.get_age()
+        print(f"Student ID: {self.student_id}, Subject: {self.subject}, Age: {age}")
 
 def show_infor(persons:List[Person]):
     for person in persons:
@@ -33,5 +43,6 @@ def show_infor(persons:List[Person]):
 
 s1 = Student(2000, "S12345")
 t1 = Teacher(1980, "Mathematics")
+p1 = StudentPartner(1995, "S54321", "Physics")
 
-show_infor([s1, t1])
+show_infor([s1, t1, p1])
