@@ -131,3 +131,26 @@ class Circle:
     def __init__(self, radius):
         self.radius = radius
     
+    def __getattribute__(self, name):
+        print(f"Accessing attribute: {name}")
+        return super().__getattribute__(name)
+    
+    def __getattr__(self, name):
+        if (name == "diameter"):
+            return self.radius * 2
+        elif (name == "area"):
+            return 3.14 * (self.radius ** 2)
+        else:
+            print(f"Attribute {name} not found")
+        return "default_value"
+    
+    def __setattr__(self, name, value):
+        print(f"Setting attribute: {name} to {value}")
+        super().__setattr__(name, value)
+
+# Example usage
+circle = Circle(5)
+print(circle.radius)  # Accessing attribute: radius
+print(circle.diameter)  # Accessing attribute: diameter
+print(circle.area)  # Accessing attribute: area
+print(circle.non_existent)  # Attribute non_existent not found, returning default value
