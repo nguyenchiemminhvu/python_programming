@@ -145,6 +145,9 @@ class Circle:
         return "default_value"
     
     def __setattr__(self, name, value):
+        if (name == "radius"):
+            if not isinstance(value, (int, float)) or value < 0:
+                raise ValueError("Radius must be a non-negative number")
         print(f"Setting attribute: {name} to {value}")
         super().__setattr__(name, value)
 
