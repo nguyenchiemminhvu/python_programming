@@ -1,0 +1,2 @@
+# Dependency inversion principle
+# A class should depend on abstractions, not on concretions, meaning that high-level modules should not depend on low-level modules, but both should depend on abstractions.

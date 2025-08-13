@@ -1,0 +1,2 @@
+# Liskov's substitution principle
+# # A subclass should be substitutable for its superclass without affecting the correctness of the program, meaning that derived classes must be usable through the base class interface without the need for the user to know the difference.
