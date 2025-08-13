@@ -125,3 +125,9 @@ print(isinstance(Derived(), Base))  # True
 print(isinstance(NonDerived(), Base))  # True
 print(issubclass(Derived, Base))  # True
 print(issubclass(NonDerived, Base))  # True
+
+# Attributes
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    

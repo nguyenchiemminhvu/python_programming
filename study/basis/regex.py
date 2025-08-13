@@ -41,3 +41,19 @@ print(x.groups())
 txt = "ab ab ab"
 x = re.search(r"(\b\w+\b) \1 \1", txt)
 print(x)
+
+x = re.search(r"(?P<g1>\w+) (?P<g2>\w+)", txt)
+print(x)
+print(x.group('g1'), x.group('g2'))
+
+x = re.search(r"(?P<g1>\w+) (?P=g1)", txt)
+print(x)
+
+txt = "ab ac ad"
+
+x = re.search(r"(?P<g1>\w+) (?:\w+) (?P<g2>\w+)", txt)
+print(x)
+print(x.group('g1'), x.group('g2'))
+
+x = re.search(r"(ab|ac|ad)", txt)
+print(x)
