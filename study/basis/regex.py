@@ -24,3 +24,20 @@ print(x)  # <re.Match object; span=(0, 20), match='The rain in Spain 123'>
 
 x = re.sub(r"([\w ]+) (\d+)", r"\2 \1", txt)
 print(x)  # 123 The rain in Spain
+
+txt = "aaaaaaaaaaa b"
+x = re.search(r"a{3,5}", txt)
+print(x)
+
+x = re.search(r"a{3,5}?", txt)
+print(x)
+
+x = re.search(r"\bb", txt)
+print(x)
+
+x = re.search(r"(\w+) (\w+)", txt)
+print(x.groups())
+
+txt = "ab ab ab"
+x = re.search(r"(\b\w+\b) \1 \1", txt)
+print(x)
