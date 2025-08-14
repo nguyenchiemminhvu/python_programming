@@ -157,3 +157,32 @@ print(circle.radius)  # Accessing attribute: radius
 print(circle.diameter)  # Accessing attribute: diameter
 print(circle.area)  # Accessing attribute: area
 print(circle.non_existent)  # Attribute non_existent not found, returning default value
+
+# Object creation
+
+class ObjectCreator:
+    __instance = []
+    def __new__(cls, *args, **kwargs):
+        instance = super().__new__(cls)
+        cls.__instance.append(instance)
+        print(cls.__instance)
+        return instance
+
+class CustomObject(ObjectCreator):
+    def __new__(cls, *args, **kwargs):
+        print(f"Creating a new instance of {cls.__name__}")
+        instance = super().__new__(cls)
+        return instance
+
+    def __init__(self, value):
+        print("Initializing CustomObject")
+        self.value = value
+
+    def __str__(self):
+        return f"CustomObject with value: {self.value}"
+
+# Example usage
+
+CustomObject("First")
+CustomObject("Second")
+CustomObject("Third")
