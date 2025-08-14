@@ -8,11 +8,11 @@ from abc import ABC, abstractmethod
 class ILocationParser(ABC):
     @abstractmethod
     def parse_ubx(self, buffer):
-        throw NotImplementedError("This method is not implemented")
+        raise NotImplementedError("This method is not implemented")
     
     @abstractmethod
     def parse_nmea(self, buffer):
-        throw NotImplementedError("This method is not implemented")
+        raise NotImplementedError("This method is not implemented")
 
 class UBXParser(ILocationParser):
     def parse_ubx(self, buffer):
