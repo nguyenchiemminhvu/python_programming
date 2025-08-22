@@ -38,11 +38,9 @@ class event_manager(ABC):
         self._listeners[eid].append(listener)
 
     def unsubscribe(self, listener: event_listener):
-        for eid in self._listeners:
+        for eid in self._listeners.keys():
             if listener in self._listeners[eid]:
                 self._listeners[eid].remove(listener)
-                if not self._listeners[eid]:
-                    del self._listeners[eid]
 
     def notify(self, eid: int, obj: event_object):
         for listener in self._listeners[eid]:
@@ -79,3 +77,5 @@ if __name__ == "__main__":
     print("Application started. Type something to see keyboard events.")
     print("Type 'exit' to quit the application.")
     app.worker_thread.join()
+    app.unsubscribe(keyboard_listener)
+    app.unsubscribe(exit_listener)
