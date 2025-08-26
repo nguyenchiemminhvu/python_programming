@@ -1,5 +1,13 @@
 from typing import Callable
 
+def execute_greeting(func: Callable[[], None]) -> None:
+    """
+    Executes a given function with no arguments and returns nothing.
+    
+    :param func: A callable that takes no arguments and returns nothing.
+    """
+    func()
+
 def execute_function(func: Callable[[int, int], int], a: int, b: int) -> int:
     """
     Executes a given function with two integer arguments and returns the result.
@@ -27,3 +35,7 @@ if __name__ == "__main__":
 
     print(f"Addition Result: {result_add}")          # Output: Addition Result: 8
     print(f"Multiplication Result: {result_multiply}")  # Output: Multiplication Result: 15
+
+    def greet() -> None:
+        print("Hello, World!")
+    execute_greeting(greet)  # Output: Hello, World!
