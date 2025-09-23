@@ -39,6 +39,18 @@ def test_array_pop():
     assert len(arr) == 4
     assert arr[-1] == 4
 
+    # pop front
+    popped_value = arr.pop(0)  # Pop the first element
+    assert popped_value == 1
+    assert len(arr) == 3
+    assert arr[0] == 2
+
+    # pop from middle
+    popped_value = arr.pop(1)  # Pop the element at index 1
+    assert popped_value == 3
+    assert len(arr) == 2
+    assert arr[0] == 2
+
 def test_array_index():
     # Test finding the index of an element
     arr = array.array('i', [1, 2, 3, 4, 5])
