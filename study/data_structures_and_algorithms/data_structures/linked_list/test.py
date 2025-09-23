@@ -2,19 +2,21 @@ class custom_list_node:
     def __init__(self, value=0, next:'custom_list_node'=None):
         self.value = value
         self.next = next
-
-def print_custom_linked_list(head: 'custom_list_node'):
-    current = head
-    while current:
-        print(current.value, end=" -> ")
-        current = current.next
-    print("None")
+    
+    def __repr__(self):
+        s = ""
+        current = self
+        while current:
+            s += f"{current.value} -> "
+            current = current.next
+        s += "None"
+        return s
 
 def test_custom_linked_list():
     node1 = custom_list_node(1)
     node2 = custom_list_node(2)
     node3 = custom_list_node(3)
-    print_custom_linked_list(node1)
+    print(node1)
 
     node1.next = node2
     node2.next = node3
@@ -38,7 +40,7 @@ def test_custom_linked_list_adding_nodes():
         current = current.next
 
     assert values == [1, 2, 3, 4, 5]
-    print_custom_linked_list(head)
+    print(head)
 
 def test_custom_linked_list_removing_nodes():
     head = custom_list_node(1)
@@ -65,7 +67,7 @@ def test_custom_linked_list_removing_nodes():
         current = current.next
 
     assert values == [1, 2, 4, 5]
-    print_custom_linked_list(head)
+    print(head)
 
 if __name__ == "__main__":
     test_custom_linked_list()
