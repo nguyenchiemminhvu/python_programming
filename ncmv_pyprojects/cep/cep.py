@@ -1,7 +1,7 @@
 from typing import List
 import math
 
-def cep_50(intervals: List[int], ideal_interval: int) -> int:
+def cep_50(intervals: List[int], ideal_interval: int = 0) -> int:
     """
     Calculate the CEP 50 value from a list of intervals.
 
@@ -20,7 +20,7 @@ def cep_50(intervals: List[int], ideal_interval: int) -> int:
     index_50 = math.ceil(0.5 * len(deviations)) - 1
     return deviations[index_50]
 
-def cep_68(intervals: List[int], ideal_interval: int) -> int:
+def cep_68(intervals: List[int], ideal_interval: int = 0) -> int:
     """
     Calculate the CEP 68 value from a list of intervals.
 
@@ -39,7 +39,7 @@ def cep_68(intervals: List[int], ideal_interval: int) -> int:
     index_68 = math.ceil(0.68 * len(deviations)) - 1
     return deviations[index_68]
 
-def cep_95(intervals: List[int], ideal_interval: int) -> int:
+def cep_95(intervals: List[int], ideal_interval: int = 0) -> int:
     """
     Calculate the CEP 95 value from a list of intervals.
 
@@ -58,7 +58,7 @@ def cep_95(intervals: List[int], ideal_interval: int) -> int:
     index_95 = math.ceil(0.95 * len(deviations)) - 1
     return deviations[index_95]
 
-def cep_99(intervals: List[int], ideal_interval: int) -> int:
+def cep_99(intervals: List[int], ideal_interval: int = 0) -> int:
     """
     Calculate the CEP 99 value from a list of intervals.
 
@@ -77,7 +77,7 @@ def cep_99(intervals: List[int], ideal_interval: int) -> int:
     index_99 = math.ceil(0.99 * len(deviations)) - 1
     return deviations[index_99]
 
-def cep_100(intervals: List[int], ideal_interval: int) -> int:
+def cep_100(intervals: List[int], ideal_interval: int = 0) -> int:
     """
     Calculate the CEP 100 value from a list of intervals.
 

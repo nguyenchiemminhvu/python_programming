@@ -1,1 +1,1 @@
-from cep import cep_intervals
+from cep import cep
